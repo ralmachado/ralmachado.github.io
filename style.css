@@ -36,6 +36,7 @@ main {
 
 #sidebar {
     display: flex;
+    flex-direction: column;
     position: absolute;
     align-items: center;
     justify-content: center;
@@ -50,6 +51,7 @@ main {
 
 #sidewrapper {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -67,7 +69,6 @@ main {
 .info {
     margin: 5px;
     text-align: center;
-    clear: left;
 }
 
 h1.info {
@@ -77,6 +78,30 @@ h1.info {
 h2.info {
     font-size: 1em;
     font-weight: normal;
+}
+
+.divider {
+    position: relative;
+    width: 80%;
+    height: 1px;
+    margin: 5px 0px;
+    background-color: black;
+    z-index: 2;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 /* Main Content */
@@ -132,16 +157,13 @@ h2.info {
     transition: 0.4s;
  }
 
- .mobile {
-    display: none;
- }
-
  /* Mobile CSS */
 
 @media only screen and (orientation: portrait) {
     #sidebar {
         opacity: 0;
         transition: opacity 0.2s;
+        min-width: 100% !important;
     }
 
     .menu {
@@ -158,4 +180,23 @@ h2.info {
     main {
         left: 0px;
     }
+}
+
+/* Sandwich animations*/
+
+.menu-animation .b1 {
+    transform: rotate(45deg) translate(1px, 11px);
+}
+
+.menu-animation .b2 {
+    opacity: 0;
+}
+
+.menu-animation .b3 {
+    transform: rotate(-45deg) translate(0px, -10px);
+}
+
+.visible {
+    opacity: 1 !important;
+    transition: opacity 0.2s;
 }

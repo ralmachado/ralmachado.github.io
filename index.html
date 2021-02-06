@@ -9,7 +9,7 @@
     <title>Link tree</title>
 </head>
 <body>
-    <div class="menu" onclick="showMenu()">
+    <div class="menu" onclick="showMenu(this)">
         <div class="b1"></div>
         <div class="b2"></div>
         <div class="b3"></div>
@@ -22,8 +22,14 @@
             <h1 class="info">Rodrigo Machado</h1>
             <h2 class="info">He/him | 20 | PT<br>Informatics Engineering @ Universidade de Coimbra</h2>
         </div>
+        <!-- Navigation buttons below (future implementation) -->
+        <!-- <div class="divider"></div>
+        <nav>
+            <a href="https://twitter.com">Test 1</a>
+            <a>Test 2</a>
+        </nav> -->
     </div>
-
+    
     <main>
         <div id="links">
             <a class="btn-grad" href="https://www.instagram.com/machadotried" target="_blank" rel="noopener noref">Instagram</a>
@@ -32,9 +38,10 @@
     </main>
 
     <script>
-        function showMenu() {
-            var div = document.getElementById("sidebar");
-            div.style.opacity = div.style.opacity == 0 ? 1 : 0;
+        function showMenu(x) {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("visible");
+            x.classList.toggle("menu-animation");
         }
     </script>
 </body>
