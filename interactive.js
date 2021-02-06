@@ -1,16 +1,17 @@
-function showMenu(x) {
+function toggleMenu(x) {
     var sidebar = document.getElementById("sidebar");
     sidebar.classList.toggle("visible");
     x.classList.toggle("menu-animation");
+    sidebar.classList.contains("visible") ? console.log("Opened sidebar") : console.log("Closed menu");
 }
 
-// Create a function to enlarge profile picture?
 function showPicture(x) {
     var picture = document.getElementById(x);
     picture.classList.remove("no-render");
     picture.classList.add("visible");
     var close = document.getElementById("close");
     close.classList.toggle("no-render");
+    console.log("Render " + x.id);
 }
 
 function hide(x) {
