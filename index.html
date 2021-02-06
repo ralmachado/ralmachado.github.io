@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</header>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link tree</title>
-</head>
-<body>
-    <div class="menu" onclick="showMenu(this)">
-        <div class="b1"></div>
-        <div class="b2"></div>
-        <div class="b3"></div>
-    </div>
-    <div id="sidebar">
-        <div id="sidewrapper">
-            <figure>
-                <img id="pfp" src="files/profile.png" alt="Profile picture">
-            </figure>
-            <h1 class="info">Rodrigo Machado</h1>
-            <h2 class="info">He/him | 20 | PT<br>Informatics Engineering @ Universidade de Coimbra</h2>
+    <header>
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="interactive.js" type="text/javascript"></script>
+        <title>Link tree</title>
+    </head>
+    <body>
+        <div class="menu" onclick="showMenu(this)">
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <div class="b3"></div>
         </div>
-        <!-- Navigation buttons below (future implementation) -->
-        <!-- Use divider class and nav for links (already styled) -->
-    </div>
-    
-    <main>
-        <div id="links">
-            <a class="btn-grad" href="https://www.instagram.com/machadotried" target="_blank" rel="noopener noref">Instagram</a>
-            <a class="btn-grad" href="https://www.twitter.com/machadotried" target="_blank" rel="noopener noref">Twitter</a>
-            <a class="btn-grad" href="https://www.linkedin.com/in/rodrigo-machado-49bb0418a" target="_blank" rel="noopener noref">LinkedIn</a>
-        </div>
-    </main>
 
-    <script>
-        function showMenu(x) {
-            var sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("visible");
-            x.classList.toggle("menu-animation");
-        }
-        // Create a function to enlarge profile picture?
-    </script>
-</body>
+        <div id="sidebar" class="opacity-transition">
+            <div id="sidewrapper">
+                <figure>
+                    <img id="pfp" src="files/profile.png" alt="Profile picture" onclick="showPicture('fullprofile')">
+                </figure>
+                <h1 class="info">Rodrigo Machado</h1>
+                <h2 class="info">He/him | 20 | PT<br>Informatics Engineering @ Universidade de Coimbra</h2>
+            </div>
+            <!-- Navigation buttons below (future implementation) -->
+            <!-- Use divider class and nav tag for navigation links (already styled) -->
+        </div>
+        
+        <!-- Profile Picture (fullscreen) -->
+        <figure class="imgbg opacity-transition no-render" id="fullprofile" onclick="hide(this); hide('close');">
+            <img class="fullpicture" src="files/profile.png" alt="Profile picture">
+        </figure>
+
+        <div id="close" class="no-render" onclick="hide(this);hide('fullprofile');">
+            <span>BACK</span>
+            <div id="c1 no-render"></div>
+            <div id="c2 no-render"></div>
+        </div>
+
+        <main>
+            <div id="links">
+                <a class="btn-grad" href="https://www.instagram.com/machadotried" target="_blank" rel="noopener noref">Instagram</a>
+                <a class="btn-grad" href="https://www.twitter.com/machadotried" target="_blank" rel="noopener noref">Twitter</a>
+                <a class="btn-grad" href="https://www.linkedin.com/in/rodrigo-machado-49bb0418a" target="_blank" rel="noopener noref">LinkedIn</a>
+            </div>
+        </main>
+    </body>
 </html>

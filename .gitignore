@@ -1,2 +1,2 @@
-
-.vscode/snippets.code-snippets
+# Folders to ignore
+.vscode/*

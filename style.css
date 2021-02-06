@@ -34,6 +34,19 @@ main {
 }
 
 /* Sidebar */
+.menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+ }
+
+ .b1, .b2, .b3 {
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    margin: 6px 0px;
+    transition: 0.4s;
+ }
 
 #sidebar {
     display: flex;
@@ -48,7 +61,7 @@ main {
     min-width: 200px;
     z-index: 1;
     opacity: 1;
-    transition: opacity 0.2s;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 #sidewrapper {
@@ -67,6 +80,7 @@ main {
     object-fit: cover;
     object-position: 0px -20px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .info {
@@ -108,7 +122,6 @@ nav a:hover {
 }
 
 /* Main Content */
-
 #links {
     display: flex;
     justify-content: center;
@@ -140,33 +153,50 @@ nav a:hover {
    display: block;
  }
 
- .btn-grad:hover {
+.btn-grad:hover {
    background-position: right center; /* change the direction of the change here */
    color: #fff;
    text-decoration: none;
- }
+}
 
- .menu {
-    display: none;
+/* Close Button*/
+#close {
+    position: absolute;
+    z-index: 4;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Fullscreen pictures */
+.imgbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
     opacity: 0;
-    transition: opacity 0.2s;
- }
+    transition-delay: 1s !important;
+}
 
- .b1, .b2, .b3 {
-    width: 30px;
-    height: 2px;
-    background-color: black;
-    margin: 6px 0px;
-    transition: 0.4s;
- }
+.imgbg img {
+    max-height: 80%;
+    width: auto;
+}
 
  /* Mobile CSS */
-
 @media only screen and (orientation: portrait) {
     #sidebar {
         opacity: 0;
         transition: opacity 0.2s;
         min-width: 100% !important;
+        box-shadow: none;
     }
 
     .menu {
@@ -201,7 +231,16 @@ nav a:hover {
     transform: rotate(-45deg) translate(0px, -10px);
 }
 
+/* Modifiers */
+
+.opacity-transition {
+    transition: opacity 0.2s;
+}
+
 .visible {
     opacity: 1 !important;
-    transition: opacity 0.2s;
+}
+
+.no-render {
+    display: none !important;
 }
