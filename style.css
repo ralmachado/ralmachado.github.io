@@ -67,6 +67,7 @@ main {
 .info {
     margin: 5px;
     text-align: center;
+    clear: left;
 }
 
 h1.info {
@@ -131,7 +132,7 @@ h2.info {
     transition: 0.4s;
  }
 
- #mobile {
+ .mobile {
     display: none;
  }
 
@@ -141,10 +142,13 @@ h2.info {
     #sidebar {
         opacity: 0;
         transition: opacity 0.2s;
+        min-width: 100%;
     }
 
-    #mobile {
-        display: block;
+    .mobile {
+        display: flex;
+        float: left;
+        width: 100%;
     }
 
     .menu {
