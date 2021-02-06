@@ -41,7 +41,11 @@ main {
     justify-content: center;
     background-color: white;
     height: 100%;
-    width: 250px;
+    max-width: 250px;
+    min-width: 200px;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.2s;
 }
 
 #sidewrapper {
@@ -52,8 +56,8 @@ main {
 }
 
 #pfp {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin: 15px;
     overflow: hidden;
     object-fit: cover;
@@ -112,3 +116,49 @@ h2.info {
    color: #fff;
    text-decoration: none;
  }
+
+ .menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+ }
+
+ .b1, .b2, .b3 {
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    margin: 6px 0px;
+    transition: 0.4s;
+ }
+
+ #mobile {
+    display: none;
+ }
+
+ /* Mobile CSS */
+
+@media screen and (max-width: 600px) {
+    #sidebar {
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    #mobile {
+        display: block;
+    }
+
+    .menu {
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 0.2s;
+    }
+
+    main {
+        left: 0px;
+    }
+}

@@ -9,6 +9,11 @@
     <title>Link tree</title>
 </head>
 <body>
+    <div class="menu" onclick="showMenu()">
+        <div class="b1"></div>
+        <div class="b2"></div>
+        <div class="b3"></div>
+    </div>
     <div id="sidebar">
         <div id="sidewrapper">
             <figure>
@@ -25,5 +30,12 @@
             <a class="btn-grad" href="https://www.twitter.com/machadotried" target="_blank" rel="noopener noref">Twitter</a>
         </div>
     </main>
+
+    <script>
+        function showMenu() {
+            var div = document.getElementById("sidebar");
+            div.style.opacity = div.style.opacity == 0 ? 1 : 0;
+        }
+    </script>
 </body>
 </html>
