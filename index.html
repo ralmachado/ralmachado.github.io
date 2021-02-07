@@ -10,39 +10,45 @@
         <title>Link tree</title>
     </head>
     <body>
-        <div class="menu" onclick="toggleMenu(this)">
-            <div class="b1"></div>
-            <div class="b2"></div>
-            <div class="b3"></div>
+        <div id="menu" onclick="toggleMenu(this)">
+            <div class="b1 menu"></div>
+            <div class="b2 menu"></div>
+            <div class="b3 menu"></div>
         </div>
 
-        <div id="sidebar" class="opacity-transition">
-            <div id="sidewrapper">
-                <figure>
-                    <img id="pfp" src="files/profile.png" alt="Profile picture" onclick="showPicture('fullprofile')">
-                </figure>
-                <h1 class="info">Rodrigo Machado</h1>
-                <h2 class="info">He/him | 20 | PT<br>Informatics Engineering @ Universidade de Coimbra</h2>
-            </div>
+        <div id="sidebar" class="opacity-transition color-transition">
+            <figure>
+                <img id="pfp" src="files/profile.png" alt="Profile picture" onclick="showPicture('fullprofile')">
+            </figure>
+            <h1 class="info">Rodrigo Machado</h1>
+            <h2 class="info">He/him | 20 | PT<br>Informatics Engineering @ Universidade de Coimbra</h2>
             <!-- Navigation buttons below (future implementation) -->
             <!-- Use divider class and nav tag for navigation links (already styled) -->
         </div>
         
-        <!-- Profile Picture (fullscreen) -->
-        <div class="imgbg no-render" id="fullprofile" onclick="hide(this); hide('close');">
-            <img class="fullpicture" src="files/profile.png" alt="Profile picture">
-        </div>
-
+        <!-- Close button for sidebar in mobile mode -->
         <div id="close" class="no-render" onclick="hide(this);hide('fullprofile');">
             <span>BACK</span>
             <div id="c1 no-render"></div>
             <div id="c2 no-render"></div>
         </div>
 
+        <!-- Profile Picture (fullscreen) -->
+        <div class="imgbg no-render" id="fullprofile" onclick="hide(this); hide('close');">
+            <img class="fullpicture" src="files/profile.png" alt="Profile picture">
+        </div>
+
+        <!-- Theme selector -->
+        <div class="theme-selector" onclick="themeChange();">
+            <img id="light-theme" class="no-render" src="files/OOjs_UI_icon_bright_test.svg" alt="Light mode" />
+            <img id="dark-theme" src="files/OOjs_UI_icon_moon.svg" alt="Dark mode" />
+        </div>
+
         <main>
             <div id="links">
                 <a class="btn-grad" href="https://www.instagram.com/machadotried" target="_blank" rel="noopener noref">Instagram</a>
                 <a class="btn-grad" href="https://www.twitter.com/machadotried" target="_blank" rel="noopener noref">Twitter</a>
+                <a class="btn-grad" href="https://www.github.com/denioma" target="_blank" rel="noopener noref">GitHub</a>
                 <a class="btn-grad" href="https://www.linkedin.com/in/rodrigo-machado-49bb0418a" target="_blank" rel="noopener noref">LinkedIn</a>
             </div>
         </main>

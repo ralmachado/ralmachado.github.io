@@ -26,3 +26,17 @@ function hide(x) {
         console.log("Hid "+ x.id)
     }
 }
+
+function themeChange() {
+    var darkIcon = document.getElementById("dark-theme");
+    var lightIcon = document.getElementById("light-theme");
+    var sidebar = document.getElementById("sidebar");
+    var menu = document.getElementsByClassName("menu");
+    
+    darkIcon.classList.toggle("no-render");
+    lightIcon.classList.toggle("no-render");
+    sidebar.classList.toggle("dark-mode");
+    for (let bar of menu) 
+        bar.classList.toggle("dark-2");
+    
+}
