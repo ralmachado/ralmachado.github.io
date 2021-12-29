@@ -66,6 +66,7 @@ main p {
   background-color: var(--bg-secondary);
   width: 12rem;
   overflow: scroll;
+  box-shadow: 1px 0 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .navbar-nav {
@@ -98,6 +99,10 @@ main p {
 
 .nav-link:hover i {
   transform: scale(1.2);
+}
+
+.nav-link:hover .link-text {
+  transform: translateX(-10px);
 }
 
 .link-text {
