@@ -1,260 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    height: 100%;
-    font-family: 'Lato', sans-serif;
+:root {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  --nav-size: 6rem;
+  --bg-primary: #eeeeee;
+  --bg-secondary: #cccccc;
+  --text-primary: #333333;
 }
 
 body {
-    min-height: 100%;
+  color: black;
+  background-color: var(--bg-primary);
+  margin: 0;
+  padding: 0;
 }
+
+/* Main content */
 
 main {
-    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 250px; right: 0px;
-    top: 0px; bottom: 0px;
-    overflow: auto;
+  margin-left: var(--nav-size);
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
 }
 
-/* Sidebar */
-#menu {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.2s;
- }
-
- .b1, .b2, .b3 {
-    width: 30px;
-    height: 2px;
-    background-color: black;
-    margin: 6px 0px;
-    transition: 0.4s;
- }
-
-#sidebar {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    opacity: 1;
-    background-color: white;
-    height: 100%;
-    width: 250px;
-    overflow-y: auto;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+main div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 20px;
 }
 
-#pfp {
-    height: 150px;
-    width: 150px;
-    margin: 15px;
-    object-fit: cover;
-    object-position: 0px -20px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+main p {
+  max-width: 70%;
 }
 
-.info {
-    margin: 5px;
-    text-align: center;
+#profile {
+  height: 20rem;
 }
 
-h1.info {
-    font-size: 1.3em;
+/* Navbar */
+
+.navbar {
+  position: fixed;
+  transition: 250ms ease;
+  width: 5rem;
 }
 
-h2.info {
-    font-size: 1em;
-    font-weight: normal;
+.navbar::-webkit-scrollbar {
+  width: 0.25rem;
 }
 
-.divider {
-    position: relative;
-    width: 80%;
-    height: 1px;
-    margin: 5px 0px;
-    background-color: black;
-    z-index: 2;
+.navbar::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
 }
 
-nav {
-    display: flex;
-    flex-direction: column;
+.navbar::-webkit-scrollbar-thumb {
+  background: var(--text-primary);
 }
 
-nav a {
-    margin: 5px;
-    text-decoration: none;
-    color: black;
+.navbar:hover {
+  background-color: var(--bg-secondary);
+  width: 12rem;
+  overflow: scroll;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-/* Main Content */
-#links {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.nav-item {
+  width: 100%;
 }
 
-.btn {
-    background-color: grey;
-    color: black;
-    border: none;
-    width: 150px;
-    margin: 5px;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
-.btn-grad {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
-.btn-grad {
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 10px #000;
-   border-radius: 10px;
-   display: block;
- }
-
-.btn-grad:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
+.nav-link i {
+  margin: 0 1.2rem;
+  transition: ease 100ms;
 }
 
-/* Close Button*/
-#close {
-    position: absolute;
-    z-index: 4;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: white;
+.nav-link:hover i {
+  transform: scale(1.2);
 }
 
-/* Fullscreen pictures */
-.imgbg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition-delay: 1s !important;
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  transition: ease 100ms;
 }
 
-.imgbg img {
-    max-height: 80%;
-    width: auto;
-}
-
-/* Theme selector */
-.theme-selector {
-    position: absolute;
-    z-index: 2;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-.theme-selector img {
-    width: 30px;
-}
-
- /* Mobile CSS */
-@media only screen and (orientation: portrait) {
-    #sidebar {
-        opacity: 0;
-        transition: opacity 0.2s;
-        min-width: 100% !important;
-        box-shadow: none;
-    }
-
-    #menu {
-        display: inline-block;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        cursor: pointer;
-        z-index: 2;
-        opacity: 1;
-        transition: opacity 0.2s;
-    }
-
-    main {
-        left: 0px;
-    }
-}
-
-/* Sandwich animations*/
-
-.menu-animation .b1 {
-    -webkit-transform: rotate(45deg) translate(1px, 11px);
-    transform: rotate(45deg) translate(1px, 11px);
-}
-
-.menu-animation .b2 {
-    opacity: 0;
-}
-
-.menu-animation .b3 {
-    -webkit-transform: rotate(-45deg) translate(0px, -10px);
-    transform: rotate(-45deg) translate(0px, -10px);
-}
-
-/* Modifiers */
-
-.opacity-transition {
-    transition: opacity 0.2s;
-}
-
-.color-transition {
-    transition: color 0.4s;
-    transition: background-color 0.2s;
-}
-
-.visible {
-    opacity: 1 !important;
-}
-
-.no-render {
-    display: none !important;
-}
-
-.dark-mode {
-    background-color: rgb(20, 20, 20) !important;
-    color: white !important;
-}
-
-.dark-2 {
-    background-color: white !important;
+.navbar:hover .link-text {
+  display: inline;
 }
