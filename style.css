@@ -22,7 +22,6 @@ main {
   margin-left: var(--nav-size);
   padding-left: 1rem;
   display: flex;
-  flex-direction: row;
   align-items: center;
   height: 100vh;
 }
@@ -98,23 +97,27 @@ main p {
     overflow: scroll;
     box-shadow: 1px 0 10px 0 rgba(0, 0, 0, 0.4);
   }
-  
+
   .nav-link:hover i {
     transform: scale(1.2);
   }
-  
+
   .nav-link:hover .link-text {
     transform: translateX(-10px);
   }
-  
+
   .link-text {
     display: none;
     margin-left: 1rem;
     transition: ease 100ms;
   }
-  
+
   .navbar:hover .link-text {
     display: inline;
+  }
+
+  main {
+    flex-direction: row;
   }
 }
 
@@ -125,12 +128,13 @@ main p {
     margin-left: 0;
     height: 85vh;
     overflow: auto;
-}
-  
+    flex-direction: column;
+  }
+
   .navbar {
     bottom: 0;
   }
-  
+
   .navbar, .navbar-nav {
     flex-direction: row;
     height: fit-content;
@@ -144,7 +148,7 @@ main p {
   .nav-item {
     width: fit-content;
   }
-  
+
   .link-text {
     display: none;
   }
