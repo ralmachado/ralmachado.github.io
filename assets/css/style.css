@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  --nav-size: 6rem;
+  --bg-primary: #eeeeee;
+  --bg-secondary: #cccccc;
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --text-accent: #0d6efd;
+}
+
+body {
+  color: black;
+  background-color: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main content */
+
+main {
+  margin-left: var(--nav-size);
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+main div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+main p {
+  max-width: 450px;
+}
+
+#profile {
+  height: 20rem;
+}
+
+main a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+a:hover, a:hover > * {
+  color: var(--text-accent);
+}
+
+/* Sidebar */
+
+.sidebar {
+  display: flex;
+  position: fixed;
+  transition: 250ms ease;
+  width: 5rem;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--text-primary);
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.bar-item {
+  width: 100%;
+}
+
+.bar-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.bar-link i {
+  margin: 0 1.2rem;
+  transition: ease 100ms;
+}
+
+@media only screen and (min-width: 768px) {
+  .sidebar:hover {
+    background-color: var(--bg-secondary);
+    width: 12rem;
+    overflow: scroll;
+    box-shadow: 1px 0 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .bar-link:hover i {
+    transform: scale(1.2);
+  }
+
+  .bar-link:hover .bar-text {
+    transform: translateX(-10px);
+  }
+
+  .bar-text {
+    display: none;
+    margin-left: 1rem;
+    transition: ease 100ms;
+  }
+
+  .sidebar:hover .bar-text {
+    display: inline;
+  }
+
+  main {
+    flex-direction: row;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  main {
+    padding: 15px;
+    margin-left: 0;
+    height: 85vh;
+    overflow: auto;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    bottom: 0;
+  }
+
+  .sidebar, .sidebar-nav {
+    flex-direction: row;
+    height: fit-content;
+    width: 100vw;
+  }
+
+  .sidebar-nav {
+    justify-content: space-around;
+  }
+
+  .bar-item {
+    width: fit-content;
+  }
+
+  .bar-text {
+    display: none;
+  }
+}
